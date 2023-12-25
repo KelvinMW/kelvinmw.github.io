@@ -1,5 +1,6 @@
 baseURL = "https://kelvinmaina.me/"
 languageCode = "en-us"
+publishDir = "docs"
 theme = "aafu"
 [build]
   writeStats = true
