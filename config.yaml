@@ -1,0 +1,164 @@
+baseURL: https://kelvinmaina.me/
+languageCode: en-us
+build:
+  writeStats: true
+params:
+  title: Kelvin Maina Wangari # Updated Title
+  author: Kelvin Maina Wangari # Updated Author
+  description: Kelvin Maina Wangari's Personal Website # Updated description
+  copyright: >- # Updated copyright
+    © 2025 Kelvin Maina Wangari
+  theme:
+    mainTheme: dark # Keeping user preference
+    showAttribute: false
+    singlePage: false
+  favicons:
+    use: true
+    metas: |2-
+              <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+              <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+              <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+              <link rel="manifest" href="site.webmanifest">
+              <link rel="mask-icon" href="safari-pinned-tab.svg" color="#252627">
+              <link rel="shortcut icon" href="favicon.ico">
+
+  profile:
+    name: "Kelvin Maina Wangari" # Updated name
+    tagline: "Computer Science / Mathematics Teacher" # Updated tagline
+    location: "Currently Hargeisa, Somaliland" # Updated location
+    photo: profile.jpg # Keep placeholder image name
+  social:
+    title: Links
+    list:
+      - icon: fab fa-linkedin-in
+        url: "https://www.linkedin.com/in/kelvin-maina-522877a4/" # URL from previous context
+        title: LinkedIn
+      - icon: fab fa-stack-overflow
+        url: "https://stackoverflow.com/users/12234952/kelvin-maina?tab=profile" # URL from previous context
+        title: StackOverflow
+      - icon: fab fa-github
+        url: "https://github.com/KelvinMW" # URL from document
+        title: GitHub
+      - icon: fab fa-twitter
+        url: "https://twitter.com/MKelvinW" # URL from previous context
+        title: Twitter
+      - icon: fas fa-envelope # Added email
+        url: "mailto:wkelvinmaina@gmail.com" # Email from document
+        title: Email
+      # Removed Orcid, Google Scholar, ResearchGate as no info was found in the document
+  showInAccordion:
+    - item: aboutme
+      expand: true
+    - item: experience
+    - item: education
+    - item: publication # No publications found
+    - item: project
+    - item: skill
+    - item: hobby # No explicit hobbies found
+  aboutme:
+    title: About Me
+    icon: fas fa-user
+    description: | # Using multiline indicator for better readability
+      ### About Me
+      I am a multifaceted professional with a strong background in computer science, IT consultancy, and education. With a Bachelor's degree in Computer Science and Mathematics from Jomo Kenyatta University of Agriculture & Technology and a Diploma in Technical Teacher Education (Advanced) from Kenya Technical Trainers College, my career has been dedicated to merging the realms of technology and education.
+
+      In the IT sector, I have extensive experience as a software developer and IT consultant, collaborating with companies like Kwality Consulting Solutions to design and implement client-specific software solutions. My expertise includes managing cloud server deployments, enhancing user engagement through innovative features, and conducting comprehensive business analyses to drive decision-making.
+
+      As a teacher, I have over six years of experience inspiring and motivating students from diverse backgrounds. My teaching philosophy emphasizes hands-on, project-based learning, and I strive to create an inclusive and engaging classroom environment. This approach fosters creativity, critical thinking, and collaboration, empowering the next generation of computer scientists. In my free time, I enjoy staying updated with the latest trends in technology and engaging in community service projects. I am passionate about mentoring young aspiring computer scientists and continuously seek to bridge the gap between technology and education to make meaningful contributions to society.
+  experience:
+    title: Experiences
+    icon: fas fa-briefcase
+    list:
+      - position: Head of ICT | Computer Science / Mathematics Teacher
+        dates: August 2018 - *Present* # Assuming present based on context
+        company: ELM International School, Hargeisa, Somaliland
+        details: | # Using multiline indicator for list items
+          **Teaching Roles:**
+          - Deliver engaging IGCSE/A-Level Computer Science/ICT curriculum (Theory & Practical: Database, Programming, Office Skills, Web Authoring).
+          - Design lesson plans, assignments, projects; assess student work and provide feedback.
+          - Prepare candidates for IGCSE exams.
+          - Manage classroom to encourage participation and maintain a positive learning environment.
+          - Promote digital literacy to staff and public (e.g., via MOOCs).
+
+          **Head of ICT Roles:**
+          - Oversee school's technology integration to align with vision and goals.
+          - Lead the ICT department.
+          - Engage in strategic planning for technology use.
+          - Develop and improve ICT curriculum.
+          - Train staff on collaboration tools and technology integration.
+          - Manage school data policy and data protection compliance.
+      # Removed placeholder experience entries
+  education:
+    title: Education
+    icon: fas fa-graduation-cap
+    list:
+      - degree: Diploma in Technical Teacher Education (Advanced)
+        college: Kenya Technical Trainers College
+        dates: April 2018 - Aug 2019
+        # thesis_title: "" # No thesis mentioned
+        # thesis_url: "#"
+      - degree: Bachelor of Science [degree] Mathematics & Computer Science
+        college: Jomo Kenyatta University of Agriculture & Technology
+        dates: Aug 2012 - Nov 2016
+        # thesis_title: "" # No thesis mentioned
+        # thesis_url: "#"
+      - degree: Secondary School Diploma
+        college: St. Michael’s Secondary School
+        dates: Jan 2008 - Dec 2011
+      # Removed placeholder education entries
+  publication:
+    title: Publications
+    icon: fas fa-book
+    format: # Keeping format in case publications are added later
+      - date
+      - title
+      - authors
+      - journal
+    # types: # Commenting out types as there are no publications
+    #  - Journal Articles
+    #  - Proceedings
+    list: [] # Empty list as no publications were found in the document
+  project:
+    title: Projects
+    icon: fas fa-project-diagram
+    list:
+      - title: MOOCs for Secondary Students
+        url: "https://secondary.elmischools.com/index.php?q=%2Fmodules%2FFree+Learning%2Funits_browse.php&view=grid&gibbonDepartmentID=11&difficulty=&name=&Go=Go"
+        description: Created Massive Open Online Courses (MOOCs) to supplement classroom learning, fostering independent study and digital literacy for secondary students.
+      - title: GitHub Projects
+        url: "https://github.com/kelvinMW/"
+        description: Developed real-world projects hosted on GitHub, demonstrating practical application of computer science concepts.
+      - title: ELM Schools Android App
+        url: "https://play.google.com/store/apps/details?id=com.elmischools.system"
+        description: Contributed to the development of the ELM Schools Android application available on Google Play.
+      - title: Extracurricular Tech Initiatives
+        # url: "#" # No specific URL provided
+        description: Mentored students in extracurricular tech initiatives like coding competitions and robotics clubs.
+      # Removed placeholder project entries
+  skill:
+    title: Skills
+    panelId: skill-panel
+    icon: fas fa-cogs
+    list: # Ratings removed as they were not in the document
+      - skill: "ICT/Computer Science Teaching (KS3-KS5, IGCSE/A-Level)"
+      - skill: "Curriculum Design, Delivery & Assessment"
+      - skill: "Lesson Planning (Hands-on, Project-based)"
+      - skill: "Classroom Management"
+      - skill: "Database, Programming, Algorithm Design, Web Authoring, Office Productivity"
+      - skill: "MOOC Creation & Digital Literacy Promotion"
+      - skill: "ICT Department Leadership & Strategic Planning"
+      - skill: "Staff Training (Collaboration Tools, Blended Learning)"
+      - skill: "Data Policy & Protection Compliance"
+      - skill: "Software Development & IT Consultancy"
+      - skill: "Communication, Presentation & Mentoring"
+      - skill: "Organization & Adaptability"
+      - skill: "Researching Emerging Technologies"
+      # Removed placeholder skill entries
+  hobby:
+    title: Hobbies
+    icon: fas fa-gamepad
+    list: # Inferred from About Me section of the document
+      - hobby: Staying updated with technology trends
+      - hobby: Community service projects
+      - hobby: Mentoring young computer scientists
+      # Removed placeholder hobby entries

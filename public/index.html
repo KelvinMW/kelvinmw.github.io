@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<html lang="en-us" class="m-auto ocean"><head>
-  <title>KELVIN MAINA WANGARI</title>
+<html lang="en-us" class="m-auto  dark "><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <title>Kelvin Maina Wangari</title>
 
 <meta name="theme-color" content="" />
 <meta charset="utf-8" />
 <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-<meta name="description" content="Website title" />
-<meta name="author" content="Kelvin Maina" />
-<meta name="generator" content="aafu theme by Darshan in Hugo 0.68.3" />
+<meta name="description" content="Kelvin Maina Wangari&#39;s Personal Website" />
+<meta name="author" content="Kelvin Maina Wangari" />
+<meta name="generator" content="aafu theme by Darshan in Hugo 0.131.0" />
 
-        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">        <link rel="manifest" href="/site.webmanifest">        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#252627">        <link rel="shortcut icon" href="/favicon.ico">        
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">        <link rel="manifest" href="/site.webmanifest">        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#252627">        <link rel="shortcut icon" href="/favicon.ico">
   <link
     rel="stylesheet"
     href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"
@@ -24,36 +24,68 @@
     rel="stylesheet"
     href="//fonts.googleapis.com/css?family=Didact+Gothic%7CRoboto:400%7CRoboto+Mono"
   />
-  <link rel="stylesheet" href="/css/aafu.css" />
+
   
   
-      <link rel="stylesheet" href="/css/aafu_compiled.css" />
-  
-  
+  <link href="/main.css" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/general.css" />
+  <link rel="stylesheet" href="/css/search.css" />
 
   <script>
     let html = document.querySelector("html");
     let theme = window.localStorage.getItem("theme");
-    if (theme) {
-      theme === "dark"
-        ? html.classList.add("dark")
-        : html.classList.remove("dark");
-    } else if (html.classList.contains("dark")) {
-      window.localStorage.setItem("theme", "dark");
-    } else {
-      html.classList.remove("dark");
-      window.localStorage.setItem("theme", "light");
+
+    const setTheme = (theme) => {
+      html.classList.remove("light");
+      if (theme === "dark") {
+        html.classList.add("dark");
+        window.localStorage.setItem("theme", "dark");
+      } else {
+        html.classList.remove("dark");
+        window.localStorage.setItem("theme", "light");
+      }
+      fixThemeToggleIcon(theme);
+    };
+
+    const fixThemeToggleIcon = (theme) => {
+      let themeToggle = document.querySelector(".theme-toggle");
+      if (themeToggle) {
+        if (theme === "dark") {
+          themeToggle.classList.remove("fa-moon");
+          themeToggle.classList.add("fa-sun");
+        } else {
+          themeToggle.classList.remove("fa-sun");
+          themeToggle.classList.add("fa-moon");
+        }
+      }
+    };
+
+    if (theme == null) {
+      if (html.classList.contains("dark")) {
+        theme = "dark";
+      } else if (html.classList.contains("light")) {
+        theme = "light";
+      } else {
+        
+        const prefersDark = window.matchMedia(
+          "(prefers-color-scheme: dark)"
+        ).matches;
+        if (prefersDark) {
+          theme = "dark";
+        } else {
+          theme = "light";
+        }
+      }
     }
 
+    setTheme(theme);
+
+    const toggleTheme = () => {
+      html.classList.contains("dark") ? setTheme("light") : setTheme("dark");
+    };
+
     window.onload = () => {
-      let themeToggle = document.querySelector(".theme-toggle");
-      if (window.localStorage.getItem("theme") === "dark") {
-        themeToggle.classList.remove("bi-moon-fill");
-        themeToggle.classList.add("bi-brightness-high");
-      } else {
-        themeToggle.classList.add("bi-moon-fill");
-        themeToggle.classList.remove("bi-brightness-high");
-      }
+      fixThemeToggleIcon(theme);
 
       let defaultActivePanel = document.querySelector(".accordion.active");
       if (defaultActivePanel) {
@@ -62,7 +94,6 @@
       }
     };
 
-    
     window.onresize = () => {
       let defaultActivePanel = document.querySelector(".accordion.active");
       if (defaultActivePanel) {
@@ -73,55 +104,47 @@
   </script>
 </head>
 <body class="h-screen p-2 m-auto max-w-4xl flex flex-col">
+    
     <header
-  class="nav flex flex-row row p-2 mb-6 w-full border-b border-gray-300 dark:border-gray-700 justify-between"
+  class="nav flex flex-row row py-2 mb-6 w-full border-b border-gray-700 dark:border-gray-300 justify-between"
 >
   <div>
-    <a class="mr-4 no-underline p-2 rounded hover:bg-gray-200 dark:hover:bg-gray-800" href="https://kelvinmaina.me/">Home</a>    
-    <a class="mr-4 no-underline p-2 rounded hover:bg-gray-200 dark:hover:bg-gray-800" href="/blog">Blog</a>
+    <a class="nav-menu-item" href="http://localhost:1313/">Home</a>
+    <a class="nav-menu-item" href="/blog">Blog</a>
   </div>
-  
-  <i
-    class="fas fa-sun theme-toggle text-blue-500 hover:text-blue-700 dark:text-yellow-300 dark:hover:text-yellow-500 cursor-pointer text-lg mr-9 sm:mr-0"
-    onclick="lightDark(this)"
-  ></i>
+  <div>
+    <a class="mr-4" href="/search">
+      <i class="fas fa-search"></i>
+    </a>
+    <i
+      class="fas fa-sun theme-toggle text-blue-500 hover:text-blue-700 dark:text-yellow-300 dark:hover:text-yellow-500 cursor-pointer text-lg mr-9 sm:mr-0"
+      onclick="toggleTheme()"
+    ></i>
+  </div>
 </header>
 
-<script>
-  const lightDark = (el) => {
-    let html = document.querySelector("html");
-    if (html.classList.contains("dark")) {
-      html.classList.remove("dark");
-      el.classList.add("fa-moon");
-      el.classList.remove("fa-sun");
-      window.localStorage.setItem("theme", "light");
-    } else {
-      html.classList.add("dark");
-      el.classList.add("fa-sun");
-      el.classList.remove("fa-moon");
-      window.localStorage.setItem("theme", "dark");
-    }
-  };
-</script>
 
+
+    
     <main class="grow">
 <div class="grid grid-cols-1 md:grid-cols-5 gap-2 sm py-2">
   <div class="col-span-2">
-    <div class="bg-gray-300 dark:bg-darker rounded drop-shadow-md p-2">
+    <div class="bg-gray-300 dark:bg-darker drop-shadow-md p-2 rounded-t-lg">
       <div class="flex flex-col justify-center">
-        <div class=""><div class="w-100 h-100 flex justify-center p-4">
+        <div
+  class="w-full p-2 flex justify-center align-middle profile-photo-container"
+>
   <img
-    class="rounded rounded-full"
+    class="rounded-sm"
     src="/images/profile.jpg"
-    alt="Kelvin Maina"
-    style="max-width: 250px"
+    alt="Kelvin Maina Wangari"
   />
 </div>
-</div>
-        <div class="p-2 text-center">
-          <h1 class="mb-0">Kelvin Maina .W.</h1>
-<h2 class="mb-0">Computer Scientist</h2>
-<h3 class="mb-4">City Name: Nairobi</h3>
+
+        <div class="px-2 text-center">
+          <h1 class="mb-0">Kelvin Maina Wangari</h1>
+<h2 class="mb-0">Computer Science / Mathematics Teacher</h2>
+<h3 class="mb-4">Currently Hargeisa, Somaliland</h3>
 <div class="mb-4 flex flex-wrap justify-center">
   
   <div class="mx-2">
@@ -148,10 +171,21 @@
     </a>
   </div>
   
+  <div class="mx-2">
+    <a class="text-2xl" href="mailto:wkelvinmaina@gmail.com">
+      <i class="mt-1 fas fa-envelope"></i>
+    </a>
+  </div>
+  
 </div>
- <footer class="text-sm text-center border-t border-gray-300 dark:border-gray-700  pt-2 ">
-  <p class="markdownify">short copyright message</p>
-  <p >
+
+          
+        </div>
+      </div>
+    </div>
+    <footer class="text-sm text-center border-t border-gray-500  bg-gray-200 dark:bg-dark rounded-b-lg py-2 ">
+  <p class="markdownify">© 2025 Kelvin Maina Wangari</p>
+  <p style="font-size:0px;">
     <i>
       <a href="https://github.com/darshanbaral/aafu">
         aafu
@@ -162,19 +196,18 @@
       darshan
     </a>
   </p>
+
+  
 </footer>
 
-        </div>
-      </div>
-    </div>
   </div>
   <div class="col-span-3 relative">
     
     <div class="px-2">
-      <h2 class="my-0 accordion active">
+      <h2 class="accordion active">
         
         <p
-          class="hover:bg-gray-300 rounded dark:hover:bg-darker m-0 p-2"
+         
           onclick="expandAccordion(this)"
           style="cursor: pointer"
         >
@@ -187,17 +220,21 @@
         
       >
         <div class=""><p class="markdownify">
-  As a seasoned computer science and IT consultant, I bring a wealth of experience in crafting innovative solutions for web and mobile development. My proven track record is marked by the successful delivery of high-quality solutions tailored to meet the unique needs of my clients. Notably, I have a published app on the Google Play Store and have developed several impactful web-based solutions, showcasing my ability to transform ideas into reality.My passion for technology extends beyond consulting—I am a dedicated educator in the field of IT. Guided by a teaching philosophy centered around hands-on, project-based learning, I am committed to fostering an inclusive and engaging classroom environment. This approach cultivates creativity, critical thinking, and collaboration among my students. Through my teaching endeavors, I aim to empower the next generation of computer scientists, instilling in them the skills and mindset needed to make meaningful contributions to society. Always eager to embrace the latest industry trends and technologies, I am a fast learner with a commitment to staying at the forefront of advancements. This dual focus on consulting and education reflects my dedication to driving innovation and excellence in the dynamic landscape of computer science
+  <h3 id="about-me">About Me</h3>
+<p>I am a multifaceted professional with a strong background in computer science, IT consultancy, and education. With a Bachelor&rsquo;s degree in Computer Science and Mathematics from Jomo Kenyatta University of Agriculture &amp; Technology and a Diploma in Technical Teacher Education (Advanced) from Kenya Technical Trainers College, my career has been dedicated to merging the realms of technology and education.</p>
+<p>In the IT sector, I have extensive experience as a software developer and IT consultant, collaborating with companies like Kwality Consulting Solutions to design and implement client-specific software solutions. My expertise includes managing cloud server deployments, enhancing user engagement through innovative features, and conducting comprehensive business analyses to drive decision-making.</p>
+<p>As a teacher, I have over six years of experience inspiring and motivating students from diverse backgrounds. My teaching philosophy emphasizes hands-on, project-based learning, and I strive to create an inclusive and engaging classroom environment. This approach fosters creativity, critical thinking, and collaboration, empowering the next generation of computer scientists. In my free time, I enjoy staying updated with the latest trends in technology and engaging in community service projects. I am passionate about mentoring young aspiring computer scientists and continuously seek to bridge the gap between technology and education to make meaningful contributions to society.</p>
+
 </p>
 </div>
       </div>
     </div>
     
     <div class="px-2">
-      <h2 class="my-0 accordion">
+      <h2 class="accordion">
         
         <p
-          class="hover:bg-gray-300 rounded dark:hover:bg-darker m-0 p-2"
+         
           onclick="expandAccordion(this)"
           style="cursor: pointer"
         >
@@ -210,20 +247,32 @@
         
       >
         <div class="">
-<h4 style="text-decoration: underline;">Job Title</h4>
+<h4 style="text-decoration: underline;">Head of ICT | Computer Science / Mathematics Teacher</h4>
 <p class="mb-0">
-  2019 - <em>Present</em> &middot;  Company Name 
+  August 2018 - <em>Present</em> &middot;  ELM International School, Hargeisa, Somaliland 
 </p>
-<p>Printed from desktop. Sent <a href="#">emails</a>. Called people using telephone. Drank water from office cooler. Ate donuts on people&rsquo;s birthdays.</p>
 
+<div class="prose prose-stone dark:prose-invert max-w-none">
+<p><strong>Teaching Roles:</strong></p>
+<ul>
+<li>Deliver engaging IGCSE/A-Level Computer Science/ICT curriculum (Theory &amp; Practical: Database, Programming, Office Skills, Web Authoring).</li>
+<li>Design lesson plans, assignments, projects; assess student work and provide feedback.</li>
+<li>Prepare candidates for IGCSE exams.</li>
+<li>Manage classroom to encourage participation and maintain a positive learning environment.</li>
+<li>Promote digital literacy to staff and public (e.g., via MOOCs).</li>
+</ul>
+<p><strong>Head of ICT Roles:</strong></p>
+<ul>
+<li>Oversee school&rsquo;s technology integration to align with vision and goals.</li>
+<li>Lead the ICT department.</li>
+<li>Engage in strategic planning for technology use.</li>
+<li>Develop and improve ICT curriculum.</li>
+<li>Train staff on collaboration tools and technology integration.</li>
+<li>Manage school data policy and data protection compliance.</li>
+</ul>
 
-<h4 style="text-decoration: underline;">Job Title</h4>
-<p >
-  2018 - 2019 &middot; 
-  <a href="#">Company Name</a>
-  
-</p>
-<p></p>
+</div>
+
 
 
 </div>
@@ -231,10 +280,10 @@
     </div>
     
     <div class="px-2">
-      <h2 class="my-0 accordion">
+      <h2 class="accordion">
         
         <p
-          class="hover:bg-gray-300 rounded dark:hover:bg-darker m-0 p-2"
+         
           onclick="expandAccordion(this)"
           style="cursor: pointer"
         >
@@ -248,32 +297,18 @@
       >
         <div class="">
 
-<h4 style="text-decoration: underline;">Ph.D. in Subject</h4>
-<p class="mb-0" >2013 - 2018 &middot; University of State-City</p>
-
-
-<p>
-  Thesis:
-  <a href="#"><i>Effect of humans on other humans: a study of human behavior.</i></a>
-</p>
+<h4 style="text-decoration: underline;">Diploma in Technical Teacher Education (Advanced)</h4>
+<p >April 2018 - Aug 2019 &middot; Kenya Technical Trainers College</p>
 
 
 
-
-<h4 style="text-decoration: underline;">M.S. in Subject</h4>
-<p class="mb-0" >2013 - 2018 &middot; University of State-City</p>
-
-
-<p>
-  Thesis:
-  <a href="#"><i>Effect of humans on other humans: a study of human behavior.</i></a>
-</p>
+<h4 style="text-decoration: underline;">Bachelor of Science [degree] Mathematics &amp; Computer Science</h4>
+<p >Aug 2012 - Nov 2016 &middot; Jomo Kenyatta University of Agriculture &amp; Technology</p>
 
 
 
-
-<h4 style="text-decoration: underline;">B.S. in Subject</h4>
-<p >2004 - 2009 &middot; University of State-City</p>
+<h4 style="text-decoration: underline;">Secondary School Diploma</h4>
+<p >Jan 2008 - Dec 2011 &middot; St. Michael’s Secondary School</p>
 
 
 </div>
@@ -281,10 +316,10 @@
     </div>
     
     <div class="px-2">
-      <h2 class="my-0 accordion">
+      <h2 class="accordion">
         
         <p
-          class="hover:bg-gray-300 rounded dark:hover:bg-darker m-0 p-2"
+         
           onclick="expandAccordion(this)"
           style="cursor: pointer"
         >
@@ -298,54 +333,15 @@
       >
         <div class="">
 
-
-<h4 style="text-decoration: underline;">Journal Articles</h4><p class="foo indent-8">2018.
-F Last, F Second, P secondary.
-
-
-<a href="#">
-  <em>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</em>
-</a>
-
-
-Journal of Field 52 (16), 9033-9044.
-</p>
-<p class="foo indent-8">2018.
-F Last, F Second, P secondary.
-
-
-<a href="#">
-  <em>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</em>
-</a>
-
-
-Journal of Field 52 (16), 9033-9044.
-</p>
-
-
-<h4 style="text-decoration: underline;">Proceedings</h4><p class="foo indent-8">2018.
-F Last, F Second, P secondary.
-
-
-<a href="#">
-  <em>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</em>
-</a>
-
-
-Journal of Field 52 (16), 9033-9044.
-</p>
-
-
-
 </div>
       </div>
     </div>
     
     <div class="px-2">
-      <h2 class="my-0 accordion">
+      <h2 class="accordion">
         
         <p
-          class="hover:bg-gray-300 rounded dark:hover:bg-darker m-0 p-2"
+         
           onclick="expandAccordion(this)"
           style="cursor: pointer"
         >
@@ -359,34 +355,34 @@ Journal of Field 52 (16), 9033-9044.
       >
         <div class="">
 <h4>
-  <a href="#">Project 1</a>
+  <a href="https://secondary.elmischools.com/index.php?q=%2Fmodules%2FFree&#43;Learning%2Funits_browse.php&amp;view=grid&amp;gibbonDepartmentID=11&amp;difficulty=&amp;name=&amp;Go=Go">MOOCs for Secondary Students</a>
 </h4>
-<p class="markdownify indent-8">Description of the project</p>
+<p class="markdownify indent-8">Created Massive Open Online Courses (MOOCs) to supplement classroom learning, fostering independent study and digital literacy for secondary students.</p>
 
 <h4>
-  <a href="#">Project 2</a>
+  <a href="https://github.com/kelvinMW/">GitHub Projects</a>
 </h4>
-<p class="markdownify indent-8">Description of the project</p>
+<p class="markdownify indent-8">Developed real-world projects hosted on GitHub, demonstrating practical application of computer science concepts.</p>
 
 <h4>
-  <a href="#">Project 3</a>
+  <a href="https://play.google.com/store/apps/details?id=com.elmischools.system">ELM Schools Android App</a>
 </h4>
-<p class="markdownify indent-8">Description of the project</p>
+<p class="markdownify indent-8">Contributed to the development of the ELM Schools Android application available on Google Play.</p>
 
 <h4>
-  <a href="#">Project 4</a>
+  <a href="">Extracurricular Tech Initiatives</a>
 </h4>
-<p class="markdownify indent-8">Description of the project</p>
+<p class="markdownify indent-8">Mentored students in extracurricular tech initiatives like coding competitions and robotics clubs.</p>
 
 </div>
       </div>
     </div>
     
     <div class="px-2">
-      <h2 class="my-0 accordion">
+      <h2 class="accordion">
         
         <p
-          class="hover:bg-gray-300 rounded dark:hover:bg-darker m-0 p-2"
+         
           onclick="expandAccordion(this)"
           style="cursor: pointer"
         >
@@ -411,19 +407,69 @@ Journal of Field 52 (16), 9033-9044.
   });
 </script>
 
-<code>Skill 1, Skill 2</code>
-<div class="w-100 mt-1 mb-3 border border-black dark:border-gray-300 rounded" style="height: 1.25rem;">
-  <div id="skill-percent" class="90% bg-blue-500 dark:bg-yellow-700 h-full rounded" style="width: 0; transition: all 0.5s;"></div>
+<code>ICT/Computer Science Teaching (KS3-KS5, IGCSE/A-Level)</code>
+<div class="w-100 mt-1 mb-3 border border-black dark:border-gray-300 rounded-sm" style="height: 1.25rem;">
+  <div id="skill-percent" class="% bg-blue-500 dark:bg-yellow-700 h-full rounded-sm" style="width: 0; transition: all 0.5s;"></div>
 </div>
 
-<code>Skill 3</code>
-<div class="w-100 mt-1 mb-3 border border-black dark:border-gray-300 rounded" style="height: 1.25rem;">
-  <div id="skill-percent" class="80% bg-blue-500 dark:bg-yellow-700 h-full rounded" style="width: 0; transition: all 0.5s;"></div>
+<code>Curriculum Design, Delivery &amp; Assessment</code>
+<div class="w-100 mt-1 mb-3 border border-black dark:border-gray-300 rounded-sm" style="height: 1.25rem;">
+  <div id="skill-percent" class="% bg-blue-500 dark:bg-yellow-700 h-full rounded-sm" style="width: 0; transition: all 0.5s;"></div>
 </div>
 
-<code>Skill 4</code>
-<div class="w-100 mt-1 mb-3 border border-black dark:border-gray-300 rounded" style="height: 1.25rem;">
-  <div id="skill-percent" class="50% bg-blue-500 dark:bg-yellow-700 h-full rounded" style="width: 0; transition: all 0.5s;"></div>
+<code>Lesson Planning (Hands-on, Project-based)</code>
+<div class="w-100 mt-1 mb-3 border border-black dark:border-gray-300 rounded-sm" style="height: 1.25rem;">
+  <div id="skill-percent" class="% bg-blue-500 dark:bg-yellow-700 h-full rounded-sm" style="width: 0; transition: all 0.5s;"></div>
+</div>
+
+<code>Classroom Management</code>
+<div class="w-100 mt-1 mb-3 border border-black dark:border-gray-300 rounded-sm" style="height: 1.25rem;">
+  <div id="skill-percent" class="% bg-blue-500 dark:bg-yellow-700 h-full rounded-sm" style="width: 0; transition: all 0.5s;"></div>
+</div>
+
+<code>Database, Programming, Algorithm Design, Web Authoring, Office Productivity</code>
+<div class="w-100 mt-1 mb-3 border border-black dark:border-gray-300 rounded-sm" style="height: 1.25rem;">
+  <div id="skill-percent" class="% bg-blue-500 dark:bg-yellow-700 h-full rounded-sm" style="width: 0; transition: all 0.5s;"></div>
+</div>
+
+<code>MOOC Creation &amp; Digital Literacy Promotion</code>
+<div class="w-100 mt-1 mb-3 border border-black dark:border-gray-300 rounded-sm" style="height: 1.25rem;">
+  <div id="skill-percent" class="% bg-blue-500 dark:bg-yellow-700 h-full rounded-sm" style="width: 0; transition: all 0.5s;"></div>
+</div>
+
+<code>ICT Department Leadership &amp; Strategic Planning</code>
+<div class="w-100 mt-1 mb-3 border border-black dark:border-gray-300 rounded-sm" style="height: 1.25rem;">
+  <div id="skill-percent" class="% bg-blue-500 dark:bg-yellow-700 h-full rounded-sm" style="width: 0; transition: all 0.5s;"></div>
+</div>
+
+<code>Staff Training (Collaboration Tools, Blended Learning)</code>
+<div class="w-100 mt-1 mb-3 border border-black dark:border-gray-300 rounded-sm" style="height: 1.25rem;">
+  <div id="skill-percent" class="% bg-blue-500 dark:bg-yellow-700 h-full rounded-sm" style="width: 0; transition: all 0.5s;"></div>
+</div>
+
+<code>Data Policy &amp; Protection Compliance</code>
+<div class="w-100 mt-1 mb-3 border border-black dark:border-gray-300 rounded-sm" style="height: 1.25rem;">
+  <div id="skill-percent" class="% bg-blue-500 dark:bg-yellow-700 h-full rounded-sm" style="width: 0; transition: all 0.5s;"></div>
+</div>
+
+<code>Software Development &amp; IT Consultancy</code>
+<div class="w-100 mt-1 mb-3 border border-black dark:border-gray-300 rounded-sm" style="height: 1.25rem;">
+  <div id="skill-percent" class="% bg-blue-500 dark:bg-yellow-700 h-full rounded-sm" style="width: 0; transition: all 0.5s;"></div>
+</div>
+
+<code>Communication, Presentation &amp; Mentoring</code>
+<div class="w-100 mt-1 mb-3 border border-black dark:border-gray-300 rounded-sm" style="height: 1.25rem;">
+  <div id="skill-percent" class="% bg-blue-500 dark:bg-yellow-700 h-full rounded-sm" style="width: 0; transition: all 0.5s;"></div>
+</div>
+
+<code>Organization &amp; Adaptability</code>
+<div class="w-100 mt-1 mb-3 border border-black dark:border-gray-300 rounded-sm" style="height: 1.25rem;">
+  <div id="skill-percent" class="% bg-blue-500 dark:bg-yellow-700 h-full rounded-sm" style="width: 0; transition: all 0.5s;"></div>
+</div>
+
+<code>Researching Emerging Technologies</code>
+<div class="w-100 mt-1 mb-3 border border-black dark:border-gray-300 rounded-sm" style="height: 1.25rem;">
+  <div id="skill-percent" class="% bg-blue-500 dark:bg-yellow-700 h-full rounded-sm" style="width: 0; transition: all 0.5s;"></div>
 </div>
 
 </div>
@@ -431,10 +477,10 @@ Journal of Field 52 (16), 9033-9044.
     </div>
     
     <div class="px-2">
-      <h2 class="my-0 accordion">
+      <h2 class="accordion">
         
         <p
-          class="hover:bg-gray-300 rounded dark:hover:bg-darker m-0 p-2"
+         
           onclick="expandAccordion(this)"
           style="cursor: pointer"
         >
@@ -448,11 +494,11 @@ Journal of Field 52 (16), 9033-9044.
       >
         <div class=""><ul class="pl-0">
   
-  <li class="list-unstyled mb-2">Cooking</li>
+  <li class="list-unstyled mb-2">Staying updated with technology trends</li>
   
-  <li class="list-unstyled mb-2">Hiking</li>
+  <li class="list-unstyled mb-2">Community service projects</li>
   
-  <li class="list-unstyled mb-2">Baking</li>
+  <li class="list-unstyled mb-2">Mentoring young computer scientists</li>
   
 </ul>
 </div>

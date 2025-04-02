@@ -1,0 +1,41 @@
+{{ define "main" }}
+<div class="prose dark:prose-invert max-w-none">
+  <h1 class="standard {{ if eq .Kind `term` }}font-italic{{ end }}">
+    {{ if eq .Kind "term" }}#{{ end }}{{- .Title -}}
+  </h1>
+  <!-- Debug info -->
+  {{ $allPages := where site.RegularPages "Section" "blog" }}
+  {{ $sortedPages := $allPages.ByDate.Reverse }}
+  <div class="text-sm text-gray-500 mb-4">
+    <div>Total blog posts: {{ len $allPages }}</div>
+    <!-- Debug dates -->
+    <div class="mt-2">Available posts:</div>
+    {{ range $allPages }}
+    <div>- {{ .Title }} ({{ .Date.Format "2006-01-02" }})</div>
+    {{ end }}
+  </div>
+  
+  {{ range $key, $val := $sortedPages }}
+  <div class="">
+    <div
+      class="rounded-sm hover:bg-gray-400 dark:hover:bg-darker flex flex-row items-center justify-start accordion mt-0 mb-0 p-2 {{ if eq $key 0 }}active{{ end }}"
+    >
+      <i
+        onclick="expandAccordion(this)"
+        class="cursor-pointer chevron p-2 mr-4 fas fa-chevron-right rounded-sm text-blue-500 dark:text-gray-400 hover:bg-gray-300 dark:hover:bg-gray-700"
+      ></i>
+      <a href="{{ .Permalink | relURL }}"
+        ><h2 class="accordion m-0">{{- .Title -}}</h2></a
+      >
+    </div>
+    <div
+      id="panel-item-{{ $key }}"
+      class="panel metadata-panel overflow-hidden bg-gray-200 dark:bg-dark"
+    >
+      <div class="metadata p-2">{{- partial "metadata" . -}}</div>
+    </div>
+  </div>
+  {{ end }}
+</div>
+<script src="{{ `js/accordion.js` | relURL }}"></script>
+{{ end }}
