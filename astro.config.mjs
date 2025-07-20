@@ -14,5 +14,6 @@ export default defineConfig({
     }
   },
   output: 'static',
+  outDir: 'dist',
   base: '/',
 });
