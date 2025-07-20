@@ -1,0 +1,45 @@
+---
+import Card from "../components/Card.astro";
+import { cardsData } from "../data/educationhub.js";
+import NoDataCard from "../components/NoDataCard.astro";
+import { getI18N } from "@/i18n";
+import SectionContainer from "./SectionContainer.astro";
+
+// const cardsData: any[] = [];
+//Para cambiar idioma de textos
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale });
+---
+
+<SectionContainer id="education">
+  <h2
+    class="text-3xl font-bold mb-6 text-hub-title dark:text-hub-title-dark"
+  >
+    Education
+  </h2>
+  <div class="flex flex-col gap-y-4">
+    {
+      cardsData.length > 0 ? (
+        cardsData.map((card) => (
+          <Card
+            id={card.id}
+            url={card.url}
+            href={card.href}
+            title={card.title}
+            isNew={card.isNew}
+            subtitle={card.subtitle}
+            imageSrc={card.imageSrc}
+            imageAlt={card.imageAlt}
+            tasks={card.period ? [card.period] : []}
+          />
+        ))
+      ) : (
+        <NoDataCard
+          message={i18n.PROJECTS.empty.message}
+          subtitle={i18n.PROJECTS.empty.message2}
+          imageSrc="/img/notion/white/graduations.png"
+        />
+      )
+    }
+  </div>
+</SectionContainer>

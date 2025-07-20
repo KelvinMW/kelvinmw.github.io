@@ -1,0 +1,135 @@
+---
+import Projects from "./Projects.astro";
+import Experience from "./Experience.astro";
+import Education from "./Education.astro";
+import Skills from "./Skills.astro";
+import Certifications from "./Certifications.astro";
+import NavButton from "./index/NavButton.astro";
+import SectionContainer from "./SectionContainer.astro";
+import About from "./About.astro";
+
+---
+
+<div class="flex flex-col">
+  <nav
+    class="flex gap-2 text-hub-inactive dark:text-hub-inactive-dark rounded-xl border border-hub-border dark:border-hub-border-dark bg-hub-background-nav dark:bg-hub-background-nav-dark whitespace-nowrap overflow-x-auto scrollbar-hide p-1"
+  >
+    <NavButton class="tab-btn" aria-label="btn-about" data-target="about"
+      >Professional Summary</NavButton
+    >
+    <NavButton class="tab-btn" aria-label="btn-projects" data-target="projects"
+      >Projects</NavButton
+    >
+    <NavButton class="tab-btn" aria-label="btn-experience" data-target="experience"
+      >Professional Experience</NavButton
+    >
+    <NavButton
+      class="tab-btn"
+      aria-label="btn-education"
+      data-target="education">Education</NavButton
+    >
+    <NavButton
+      class="tab-btn"
+      aria-label="btn-skills"
+      data-target="skills">Technical Proficiencies</NavButton
+    >
+    <NavButton
+      class="tab-btn"
+      aria-label="btn-certifications"
+      data-target="certifications">Certifications</NavButton
+    >
+  </nav>
+
+  <main class="mt-6">
+    <SectionContainer id="about" class="tab-content mt-0 mb-0">
+      <About />
+    </SectionContainer>
+    <SectionContainer id="projects" class="tab-content hidden mt-0 mb-0">
+      <Projects />
+    </SectionContainer>
+    <SectionContainer id="experience" class="tab-content hidden mt-0 mb-0">
+      <Experience />
+    </SectionContainer>
+    <SectionContainer id="education" class="tab-content hidden mt-0 mb-0">
+      <Education />
+    </SectionContainer>
+    <SectionContainer id="skills" class="tab-content hidden mt-0 mb-0">
+      <Skills />
+    </SectionContainer>
+    <SectionContainer id="certifications" class="tab-content hidden mt-0 mb-0">
+      <Certifications />
+    </SectionContainer>
+  </main>
+</div>
+
+<script>
+  const buttons = document.querySelectorAll(".tab-btn");
+  const contents = document.querySelectorAll(".tab-content");
+
+  // Establece el botón activo por defecto
+  const defaultActive = document.querySelector('[data-target="about"]');
+  if (defaultActive) {
+    defaultActive.classList.add(
+      "bg-hub-background",
+      "shadow-md",
+      "text-hub-title",
+      "font-semibold",
+      "dark:text-hub-title-dark",
+      "dark:bg-hub-background-dark",
+      "border-hub-light-blue/20",
+      "dark:border-hub-light-blue/30"
+    );
+    const aboutSection = document.getElementById("about");
+    if (aboutSection) {
+      aboutSection.classList.remove("hidden");
+    }
+  }
+
+  buttons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const target = button.getAttribute("data-target");
+
+      // Actualiza el estado de los botones
+      buttons.forEach((btn) =>
+        btn.classList.remove(
+          "bg-hub-background",
+          "shadow-md",
+          "text-hub-title",
+          "font-semibold",
+          "dark:text-hub-title-dark",
+          "dark:bg-hub-background-dark",
+          "border-hub-light-blue/20",
+          "dark:border-hub-light-blue/30"
+        ),
+      );
+      button.classList.add(
+        "bg-hub-background",
+        "shadow-md",
+        "text-hub-title",
+        "font-semibold",
+        "dark:text-hub-title-dark",
+        "dark:bg-hub-background-dark",
+        "border-hub-light-blue/20",
+        "dark:border-hub-light-blue/30"
+      );
+
+      // Oculta todas las secciones
+      contents.forEach((content) => content.classList.add("hidden"));
+
+      // Muestra la sección seleccionada
+      if (target) {
+        const targetElement = document.getElementById(target);
+        if (targetElement) {
+          targetElement.classList.remove("hidden");
+        }
+      }
+
+      // Desliza el botón al centro del nav
+      button.scrollIntoView({
+        behavior: "smooth", // Deslizamiento suave
+        block: "nearest", // Mantiene la posición vertical
+        inline: "center", // Centra horizontalmente
+      });
+    });
+  });
+</script>

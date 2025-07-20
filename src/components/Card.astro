@@ -1,0 +1,91 @@
+---
+import { getI18N } from "@/i18n";
+import ArrowUpRight from "../icons/ArrowUpRight.astro";
+import NewBadge from "./NewBadge.astro";
+
+//Para cambiar idioma de textos
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale });
+
+const {
+  id = "",
+  url = "",
+  href,
+  title = "Título predeterminado",
+  subtitle = "Subtítulo predeterminado",
+  imageSrc = "",
+  imageAlt = "Icono predeterminado",
+  isNew = false, // Nueva prop para controlar el badge
+  isCurrent = false, // Nueva prop para marcar trabajos actuales
+  tasks = [],
+} = Astro.props;
+
+const Tag = href ? "a" : "div";
+---
+
+<a
+  id={id}
+  href={href}
+  data-section={id}
+  class={`relative p-6 rounded-xl flex flex-col border transition-all duration-300 ease-in-out group
+   ${isCurrent 
+     ? 'border-green-500/30 dark:border-green-500/40 bg-green-50/50 dark:bg-green-900/10 shadow-lg shadow-green-500/10' 
+     : 'border-hub-border dark:border-hub-border-dark hover:shadow-lg hover:shadow-blue-500/10 hover:bg-hub-background-nav dark:bg-hub-background-nav-dark hover:border-hub-light-blue/20 dark:hover:border-hub-light-blue/30'
+   }`}
+  target={href ? "_blank" : undefined}
+  rel={href ? "noopener noreferrer" : undefined}
+>
+  <!-- Badge de "New" -->
+  {
+    isNew && (
+      <div class="animate-pulse absolute top-0 right-2 transform translate-x-1/2 -translate-y-1/2 bg-sky-500 text-white text-xs font-semibold px-2 py-0.5 rounded-full shadow-md z-10">{i18n.PROJECTS.BADGE.NEW}</div>
+    )
+  }
+  
+  <!-- Badge de "Current" -->
+  {
+    isCurrent && (
+      <div class="absolute top-0 right-2 transform translate-x-1/2 -translate-y-1/2 bg-green-500 text-white text-xs font-semibold px-2 py-0.5 rounded-full shadow-md z-10">{i18n.PROJECTS.BADGE.CURRENT}</div>
+    )
+  }
+
+  <div class="flex items-center justify-between">
+    <!-- Contenedor izquierdo -->
+    <div class="flex items-center">
+      <div
+        class={`rounded-lg border overflow-hidden size-12 flex items-center justify-center
+        ${isCurrent 
+          ? 'border-green-500/30 dark:border-green-500/40 bg-gradient-to-br from-green-500/20 to-green-600/20 dark:from-green-500/30 dark:to-green-600/30' 
+          : 'border-hub-border dark:border-hub-border-dark dark:bg-hub-background bg-gradient-to-br from-hub-light-blue/10 to-hub-dark-blue/10 dark:from-hub-light-blue/20 dark:to-hub-dark-blue/20'
+        }`}
+      >
+        <img src={imageSrc} alt={imageAlt} class="w-full h-full object-cover" />
+      </div>
+
+      <div class="pl-4 flex flex-col justify-start">
+        <h2 class="font-semibold text-lg text-hub-title dark:text-hub-title-dark">
+          {title}
+        </h2>
+        <small class="text-hub-subtitle dark:text-hub-subtitle-dark text-sm font-medium tracking-wide"
+          >{subtitle}</small
+        >
+      </div>
+    </div>
+
+    <!-- Icono derecho -->
+    {
+      href && (
+        <ArrowUpRight class="size-6 text-hub-subtitle dark:text-hub-subtitle-dark transition-transform duration-300 ease-in-out group-hover:rotate-45" />
+      )
+    }
+  </div>
+      {
+      tasks.length > 0 && (
+      <ul class="list-disc list-inside mt-4 space-y-2 text-sm text-hub-light-gray dark:text-hub-dark-gray leading-relaxed">
+        {tasks.map((task) => (
+          <li class="pl-2" set:html={task}></li>
+        ))}
+      </ul>
+    )
+  }
+</a>

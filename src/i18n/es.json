@@ -1,0 +1,63 @@
+{
+  "SEO_TITLE": "Kelvin Maina Wangari - Desarrollador de Software y Consultor TI",
+  "SEO_DESCRIPTION": "Un desarrollador de software y consultor de TI orientado a resultados con más de cinco años de experiencia en el desarrollo de software de ciclo completo, incluidas aplicaciones móviles y web. Capacidad demostrada para ofrecer soluciones de alta calidad, desde el concepto hasta la implementación, para una clientela diversa. Posee una gran experiencia en la gestión de infraestructuras en la nube, el análisis de datos y la instrucción técnica. Un aprendiz dedicado y rápido, comprometido con el aprovechamiento de las tecnologías emergentes para resolver problemas complejos e impulsar la participación de los usuarios.",
+  "ERROR_404": {
+    "TITLE": "404 - No Encontrado",
+    "DESCRIPTION": "No Encontrado",
+    "BACK_HOMEPAGE_BTN": "Volver"
+  },
+  "HERO": {
+    "NAME": "Kelvin Maina Wangari",
+    "TITLE": "Desarrollador de Software y Consultor TI",
+    "DESCRIPTION": "Soy desarrollador de software, consultor de TI y docente de informática con más de cinco años de experiencia trabajando en los sectores tecnológico y educativo. Desarrollo aplicaciones web y móviles, trabajo con herramientas y datos en la nube, y me apasiona enseñar TIC de forma práctica y basada en proyectos. Ya sea resolviendo problemas reales con código o ayudando a los estudiantes a desarrollar sus habilidades tecnológicas, me apasiona generar un impacto positivo en ambos sectores."
+  },
+  "ABOUT": {
+    "TITLE": "acerca de",
+    "DESCRIPTION": "Acerca de DESCRIPCIÓN"
+  },
+  "NAVBAR": {
+    "PROJECTS": "Proyectos",
+    "EXPERIENCE": "Experiencia",
+    "EDUCATION": "Educación",
+    "SKILLS": "Habilidades",
+    "CERTIFICATIONS": "Certificaciones"
+  },
+  "PROJECTS": {
+    "empty": {
+      "message": "Vaya, no hay proyectos para mostrar.",
+      "message2": "¡Pero no te preocupes, siempre hay algo interesante esperándote!"
+    },
+    "BADGE": {
+      "NEW": "Nuevo",
+      "CURRENT": "Actual"
+    }
+  },
+  "EDUCATION": {
+    "empty": {
+      "message": "Vaya, no hay recursos educativos para mostrar.",
+      "message2": "¡Pero no te preocupes, siempre hay algo interesante esperándote!"
+    }
+  },
+  "CERTIFICATIONS": {
+    "empty": {
+      "message": "Vaya, no hay certificaciones para mostrar.",
+      "message2": "¡Pero no te preocupes, siempre hay algo interesante esperándote!"
+    }
+  },
+  "SKILLS": {
+    "empty": {
+      "message": "Vaya, no hay habilidades para mostrar.",
+      "message2": "¡Pero no te preocupes, siempre hay algo interesante esperándote!"
+    }
+  },
+  "EXPERIENCE": {
+    "empty": {
+      "message": "Vaya, no hay experiencias para mostrar.",
+      "message2": "¡Pero no te preocupes, siempre hay algo interesante esperándote!"
+    }
+  },
+  "NOT_DATA": {
+    "message": "Vaya, no hay datos para mostrar.",
+    "message2": "¡Pero no te preocupes, siempre hay algo interesante esperándote!"
+  }
+}

@@ -1,0 +1,117 @@
+---
+import { getAbsoluteLocaleUrl } from "astro:i18n";
+import ArrowUpRight from "../../icons/ArrowUpRight.astro";
+import GitHub from "../../icons/GitHub.astro";
+import LinkedIn from "../../icons/LinkedIn.astro";
+import SocialPill from "../../icons/SocialPill.astro";
+import Web from "../../icons/Web.astro";
+import Email from "../../icons/Email.astro";
+import Twitter from "../../icons/Twitter.astro";
+import Facebook from "../../icons/Facebook.astro"
+
+import {
+  getLangFromUrl,
+  useTranslations,
+  useTranslatedPath,
+} from "@/i18n/utils";
+import Tooltip from "../Tooltip.astro";
+
+//para cambiar entre idiomas y traducir rutas
+const lang = getLangFromUrl(Astro.url);
+// const t = useTranslations(lang);
+const translatePath = useTranslatedPath(lang);
+---
+
+<!-- Aside para links secundarios -->
+<aside>
+  <div class="flex gap-3 flex-wrap">
+    <!-- Resume Button -->
+    <SocialPill
+      class="px-6 py-3 gap-2 font-semibold text-sm text-white dark:text-white bg-gradient-to-r from-hub-light-blue to-hub-dark-blue hover:from-hub-dark-blue hover:to-hub-light-blue w-auto group shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out"
+      href={translatePath("/")}
+      target="_self"
+    >
+      Resume
+      <ArrowUpRight
+        class="size-4 transition-transform duration-300 ease-in-out group-hover:rotate-45"
+      />
+    </SocialPill>
+    
+    <!-- Portfolio -->
+    <Tooltip tooltip="Portfolio">
+      <SocialPill
+        href="https://kelvinmaina.com"
+        class="hover:bg-hub-light-blue/10 dark:hover:bg-hub-light-blue/20"
+        target="_blank"
+      >
+        <Web class="size-4" />
+      </SocialPill>
+    </Tooltip>
+
+    <!-- GitHub -->
+    <Tooltip tooltip="GitHub">
+      <SocialPill
+        href="https://github.com/KelvinMW/"
+        class="hover:bg-gray-100 dark:hover:bg-gray-800"
+        target="_blank"
+      >
+        <GitHub class="size-4" />
+      </SocialPill>
+    </Tooltip>
+    
+    <!-- LinkedIn -->
+    <Tooltip tooltip="LinkedIn">
+      <SocialPill
+        href="https://www.linkedin.com/in/kelvin-maina-w-522877a4/"
+        class="hover:bg-gray-100 dark:hover:bg-gray-800"
+        target="_blank"
+      >
+        <LinkedIn class="size-4" />
+      </SocialPill>
+    </Tooltip>
+    
+    <!-- Primary Email -->
+    <Tooltip tooltip="Email1">
+      <SocialPill
+        href="mailto:support@kelvinmaina.com"
+        class="hover:bg-gray-100 dark:hover:bg-gray-800"
+        target="_blank"
+      >
+        <Email class="size-4" />
+      </SocialPill>
+    </Tooltip>
+    
+    <!-- Secondary Email -->
+    <Tooltip tooltip="Email2">
+      <SocialPill
+        href="mailto:wklevinmaina@gmail.com"
+        class="hover:bg-gray-100 dark:hover:bg-gray-800"
+        target="_blank"
+      >
+        <Email class="size-4" />
+      </SocialPill>
+    </Tooltip>
+    
+    <!-- X (Twitter) -->
+    <Tooltip tooltip="X">
+      <SocialPill
+        href="https://x.com/MKelvinW"
+        class="hover:bg-gray-100 dark:hover:bg-gray-800"
+        target="_blank"
+      >
+        <Twitter class="size-4" />
+      </SocialPill>
+    </Tooltip>
+    <!-- Facebook -->
+    <Tooltip tooltip="Facebook">
+      <SocialPill
+        href="https://www.facebook.com/wkelvinm/"
+        class="hover:bg-gray-100 dark:hover:bg-gray-800"
+        target="_blank"
+      >
+        <Facebook class="size-4" />
+      </SocialPill>
+    </Tooltip>
+    
+  </div>
+</aside>

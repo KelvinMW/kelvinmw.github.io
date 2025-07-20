@@ -1,48 +1,109 @@
-# aafu Theme
+# Kelvin Maina Wangari - Portfolio
 
-The aafu Theme is a responsive portfolio with blog based on [Tailwind 4.x](https://tailwindcss.com/).
+[![Version](https://img.shields.io/github/package-json/v/kelvinmaina/kelvinmaina-portfolio)](https://github.com/kelvinmaina/kelvinmaina-portfolio) [![License](https://img.shields.io/badge/license-MIT-green.svg)](https://opensource.org/licenses/MIT) [![Astro Theme](https://img.shields.io/badge/Astro-Theme-blue?logo=astro)](https://astro.build/themes/details/personal-hub-a-customizable-personal-link/)
 
-## Demo
+![Project Logo](public/img/cover/personal_hub.jpg)
 
-[Click here](https://aafu.pages.dev/) for live demo.
+## Description
+
+Kelvin Maina Wangari's professional portfolio showcasing experience as a Technical Educator & Software Developer. This portfolio highlights projects, skills, education, and professional experience in full-lifecycle software development, including mobile and web applications.
+
+## Table of Contents
+
+- [Features](#features)
+- [Technologies Used](#technologies-used)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Screenshots](#screenshots)
+- [License](#license)
+- [Contact](#contact)
+
+## Features
+
+- **Centralized Management**: Access all your information from a single place.
+- **Customization**: Configure and adapt the interface to your needs.
+- **Integrations**: Connect with various platforms and external services.
+- **Security**: Protect your data with proper authentication and authorization.
+
+## Technologies Used
+
+- **Astro**: Main framework for building the interface.
+- **Tailwind CSS**: Styling and responsive design.
+- **Vercel**: Deployment and hosting of the application.
 
 ## Installation
 
-### Development
+You can use this template in two ways:
 
-```shell
-git clone https://github.com/darshanbaral/aafu.git
-cd aafu
-npm install
-hugo server
-```
+### 1. Quick Start (Recommended)
 
-### Deployment
+Create a new project using this template with:
 
-This theme employs earch using [Pagefind](https://pagefind.app/). Run following commands to index content when deploying.
+   ```bash
+npm create astro@latest -- --template itsteddydev/hub-itsteddydev
+   ```
 
-```shell
-hugo; npx -y pagefind --site public
-```
+### 2. Manual Installation
+Follow these steps to install and run the project locally:
 
-## Getting started
+1. **Clone the repository**:
 
-After cloning the aafu repo, modify the `config.yaml` as you wish.
+   ```bash
+   git clone https://github.com/itsteddydev/hub-itsteddydev.git
+   ```
 
-### The config file
+2. **Navigate to the project directory**:
 
-You'll find a file called [`config.yaml`](//github.com/darshanbaral/aafu/blob/master/config.yaml). Customize it per your need.
+   ```bash
+   cd hub-itsteddydev
+   ```
 
-Note that the sections to be displayed in the accordion, the order of the sections, and the section that should be expanded at the beginning can be specifed in the `config.yaml`.
+3. **Install dependencies**:
 
-### Add your photo
+   ```bash
+   npm install
+   ```
 
-Go to `static/images` and replace the `profile.jpg` with your own file.
+4. **Start the development server**:
 
-### Theme Colors
+   ```bash
+   npm run dev
+   ```
 
-The `aafu` theme can be set to `light`, `dark`, or `null` mode by using `params.theme.mainTheme` attribute. When `null` is chosen, either `light` or `dark` will be chosen based on device settings.
+5. Open your browser and visit `http://localhost:4321` to see the application in action.
 
-## Reporting Issues
 
-If you have discovered a bug or have a feature request, [create an issue](https://github.com/darshanbaral/aafu/issues/new).
+## Usage
+
+Once the application is running, you can:
+
+- **Customize your profile**: Add, edit, or remove personal information.
+- **Add links**: Include links to your projects, social media, or any relevant resources.
+- **Configure widgets**: Enable or disable modules according to your preferences.
+
+## Screenshots
+
+![Main View](public/img/cover/personal_hub01.webp)
+
+![Main View Dark](public/img/cover/personal_hub02.webp)
+
+![Main View Dark](public/img/cover/personal_hub03.webp)
+
+![Main View Dark](public/img/cover/personal_hub04.webp)
+
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](./LICENSE) file for more details.
+
+## Contact
+
+For inquiries, suggestions, or feedback, you can reach me through:
+
+- **Email**: wkelvinmaina@gmail.com
+- **LinkedIn**: [kelvinmaina](https://www.linkedin.com/in/kelvinmaina/)
+- **GitHub**: [kelvinmaina](https://www.github.com/kelvinmaina)
+
+---
+
+Thank you for visiting my portfolio! Feel free to reach out for collaboration opportunities or questions about my work.

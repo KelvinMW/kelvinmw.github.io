@@ -1,0 +1,12 @@
+---
+const { class: className } = Astro.props;
+---
+
+<button
+  class={`${className} aria-label="btn-nav" px-4 py-2.5 text-sm font-medium w-auto rounded-lg
+    hover:text-hub-title dark:hover:text-hub-title-dark
+    transition-all duration-200 ease-in-out`}
+  {...Astro.props}
+>
+  <slot />
+</button>

@@ -1,0 +1,63 @@
+{
+  "SEO_TITLE": "Kelvin Maina Wangari - Technical Educator & Software Developer",
+  "SEO_DESCRIPTION": "A results-oriented Software Developer and IT Consultant with over five years of experience in full-lifecycle software development, including mobile and web applications. Proven ability to deliver high-quality solutions, from concept to deployment, for a diverse clientele. Possesses strong expertise in cloud infrastructure management, data analysis, and technical instruction. A dedicated and fast learner, committed to leveraging emerging technologies to solve complex problems and drive user engagement.",
+  "ERROR_404": {
+    "TITLE": "404 - Not Found",
+    "DESCRIPTION": "Not Found",
+    "BACK_HOMEPAGE_BTN": "Go Back"
+  },
+  "HERO": {
+    "NAME": "Kelvin Maina Wangari",
+    "TITLE": "Technical Educator & Software Developer",
+    "DESCRIPTION": "I'm a Software Developer, IT Consultant, and Computer Science Educator with over five years of experience working across both tech and education. I build web and mobile apps, work with cloud tools and data, and also love teaching ICT in a hands-on, project-based way. Whether it's solving real-world problems with code or helping students grow their tech skills, I’m passionate about making an impact in both industries."
+  },
+  "ABOUT": {
+    "TITLE": "about",
+    "DESCRIPTION": "About DESCRIPTION"
+  },
+  "NAVBAR": {
+    "PROJECTS": "Projects",
+    "EXPERIENCE": "Experience",
+    "EDUCATION": "Education",
+    "SKILLS": "Skills",
+    "CERTIFICATIONS": "Certifications"
+  },
+  "PROJECTS": {
+    "empty": {
+      "message": "Oops, no projects to display.",
+      "message2": "But don't worry, there's always something interesting waiting for you!"
+    },
+    "BADGE": {
+      "NEW": "New",
+      "CURRENT": "Current"
+    }
+  },
+  "EDUCATION": {
+    "empty": {
+      "message": "Oops, there are no educational resources to display.",
+      "message2": "But don't worry, there's always something interesting waiting for you!"
+    }
+  },
+  "CERTIFICATIONS": {
+    "empty": {
+      "message": "Oops, there are no certifications to display.",
+      "message2": "But don't worry, there's always something interesting waiting for you!"
+    }
+  },
+  "SKILLS": {
+    "empty": {
+      "message": "Oops, there are no skills to display.",
+      "message2": "But don't worry, there's always something interesting waiting for you!"
+    }
+  },
+  "EXPERIENCE": {
+    "empty": {
+      "message": "Oops, there are no experiences to display.",
+      "message2": "But don't worry, there's always something interesting waiting for you!"
+    }
+  },
+  "NOT_DATA": {
+    "message": "Oops, no data to display.",
+    "message2": "But don't worry, there's always something interesting waiting for you!"
+  }
+}

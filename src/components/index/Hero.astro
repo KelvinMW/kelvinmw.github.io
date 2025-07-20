@@ -1,0 +1,51 @@
+---
+import { getI18N } from "@/i18n";
+import IconChevronDown from "../../icons/IconChevronDown.astro";
+import IconMoon from "../../icons/IconMoon.astro";
+import IconShare2 from "../../icons/IconShare2.astro";
+import IconSun from "../../icons/IconSun.astro";
+import HeroButton from "../HeroButton.astro";
+import LanguagePicker from "../LanguagePicker.astro";
+
+//Para cambiar idioma de textos
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale });
+---
+
+<div>
+  <div class="flex justify-between">
+    <img
+      class="rounded-full size-28 border-2 border-hub-border
+      dark:border-hub-border-dark
+      dark:bg-hub-background-nav-dark
+      hover:border-hub-light-blue/30
+      dark:hover:border-hub-light-blue/50
+      transition-all duration-300 ease-in-out
+      shadow-lg"
+      src="/img/notion/white/my-notion-face-transparent.png"
+      alt="Kelvin Maina Wangari Profile Picture"
+    />
+    <div class="flex gap-2 flex-wrap">
+      <!-- <HeroButton class="size-8">
+        <IconShare2 class="size-5" />
+      </HeroButton> -->
+
+      <HeroButton aria-label="btn-theme" id="toggle-theme" class="size-8">
+        <IconSun class="size-5 dark:hidden" />
+        <IconMoon class="size-5 hidden dark:inline" />
+      </HeroButton>
+
+      <div class="">
+        <LanguagePicker />
+      </div>
+    </div>
+  </div>
+  <div class="mt-6">
+    <h1 class="font-bold text-3xl text-hub-title dark:text-hub-title-dark mb-2">
+      {i18n.HERO.NAME}
+    </h1>
+    <p class="text-lg text-hub-subtitle dark:text-hub-subtitle-dark font-medium">
+      {i18n.HERO.TITLE}
+    </p>
+  </div>
+</div>

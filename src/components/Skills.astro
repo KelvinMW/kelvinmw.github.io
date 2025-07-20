@@ -1,0 +1,41 @@
+---
+import Card from "../components/Card.astro";
+import { skills } from "../data/skills.js";
+import NoDataCard from "../components/NoDataCard.astro";
+import { getI18N } from "@/i18n";
+import SectionContainer from "./SectionContainer.astro";
+
+// const cardsData: any[] = [];
+//Para cambiar idioma de textos
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale });
+---
+
+<SectionContainer id="skills">
+  <h2
+    class="text-3xl font-bold mb-6 text-hub-title dark:text-hub-title-dark"
+  >
+    Technical Proficiencies
+  </h2>
+  <div class="flex flex-col gap-y-4">
+    {
+      skills.length > 0 ? (
+        skills.map((skill, index) => (
+          <Card
+            id={`skill-${index}`}
+            title={skill.title}
+            subtitle={skill.level}
+            imageSrc="/img/notion/white/my-notion-face-transparent_14.png"
+            imageAlt={skill.title}
+          />
+        ))
+      ) : (
+        <NoDataCard
+          message={i18n.PROJECTS.empty.message}
+          subtitle={i18n.PROJECTS.empty.message2}
+          imageSrc="/img/notion/white/my-notion-face-transparent_9.png"
+        />
+      )
+    }
+  </div>
+</SectionContainer>

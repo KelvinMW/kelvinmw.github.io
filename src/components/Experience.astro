@@ -1,0 +1,44 @@
+---
+import Card from "../components/Card.astro";
+import { experiences } from "../data/experience.js";
+import NoDataCard from "../components/NoDataCard.astro";
+import { getI18N } from "@/i18n";
+import SectionContainer from "./SectionContainer.astro";
+
+// const cardsData: any[] = [];
+//Para cambiar idioma de textos
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale });
+---
+
+<SectionContainer id="experience">
+  <h2
+    class="text-3xl font-bold mb-6 text-hub-title dark:text-hub-title-dark"
+  >
+    Professional Experience
+  </h2>
+  <div class="flex flex-col gap-y-4">
+    {
+      experiences.length > 0 ? (
+        experiences.map((card, index) => (
+          <Card
+            id={`experience-${index}`}
+            url={`${card.company} | ${card.location}`}
+            title={card.title}
+            subtitle={`${card.company} • ${card.location} • ${card.period}`}
+            imageSrc="/img/notion/white/work.png"
+            imageAlt={card.title}
+            tasks={card.tasks}
+            isCurrent={card.period.includes('Present')}
+          />
+        ))
+      ) : (
+        <NoDataCard
+          message={i18n.PROJECTS.empty.message}
+          subtitle={i18n.PROJECTS.empty.message2}
+                      imageSrc="/img/notion/white/work.png"
+        />
+      )
+    }
+  </div>
+</SectionContainer>

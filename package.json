@@ -1,23 +1,22 @@
 {
-  "name": "aafu",
-  "version": "2024.01.25",
-  "description": "The aafu theme is a responsive portfolio with blog.",
-  "main": "index.js",
-  "keywords": [
-    "hugo",
-    "portfolio"
-  ],
-  "author": "Darshan Baral",
-  "license": "MIT",
+  "name": "kelvinmaina-portfolio",
+  "type": "module",
+  "version": "0.3.0",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "host": "astro dev --host",
+    "deploy": "npm run build && gh-pages -d dist"
+  },
+  "dependencies": {
+    "@astrojs/tailwind": "^6.0.1",
+    "astro": "^5.5.4",
+    "tailwindcss": "^3.4.1",
+    "tailwindcss-animate": "^1.0.7"
+  },
   "devDependencies": {
-    "@fullhuman/postcss-purgecss": "^7.0.2",
-    "@tailwindcss/forms": "^0.5.9",
-    "@tailwindcss/postcss": "^4.0.0",
-    "@tailwindcss/typography": "^0.5.15",
-    "autoprefixer": "^10.4.20",
-    "postcss": "^8.4.49",
-    "postcss-cli": "^11.0.0",
-    "postcss-import": "^16.1.0",
-    "tailwindcss": "^4.0.0"
+    "gh-pages": "^6.3.0"
   }
 }
