@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://kelvinmaina.com/sitemap.xml
