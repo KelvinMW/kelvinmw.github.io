@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>NGO on Kelvin Maina Wangari</title>
+    <link>https://kelvinmaina.com/tags/ngo/</link>
+    <description>Recent content in NGO on Kelvin Maina Wangari</description>
+    <image>
+      <title>Kelvin Maina Wangari</title>
+      <url>https://kelvinmaina.com/img/notion/white/my-notion-face-transparent.png</url>
+      <link>https://kelvinmaina.com/img/notion/white/my-notion-face-transparent.png</link>
+    </image>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 14 May 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://kelvinmaina.com/tags/ngo/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Data Analysis for NGOs: Turning Field Data into Actionable Reports</title>
+      <link>https://kelvinmaina.com/posts/data-analysis-for-ngos/</link>
+      <pubDate>Wed, 14 May 2025 00:00:00 +0000</pubDate>
+      <guid>https://kelvinmaina.com/posts/data-analysis-for-ngos/</guid>
+      <description>NGOs collect enormous amounts of data but often struggle to turn it into reports that drive decisions. Here&amp;#39;s a practical workflow I&amp;#39;ve developed over multiple international projects.</description>
+    </item>
+  </channel>
+</rss>
