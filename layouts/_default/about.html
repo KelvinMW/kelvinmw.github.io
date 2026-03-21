@@ -1,0 +1,65 @@
+{{- define "main" }}
+<article class="post-single">
+  <header class="post-header">
+    <h1 class="post-title">{{ .Title }}</h1>
+    {{- if .Description }}
+    <div class="post-description">{{ .Description }}</div>
+    {{- end }}
+  </header>
+
+  <div class="post-content">
+    {{- .Content }}
+
+    {{/* ---- Skills ---- */}}
+    <h2>Skills</h2>
+    <div class="portfolio-skills">
+      {{- range site.Data.skills }}
+      <div class="skill-item">
+        <span class="skill-title">{{ .title }}</span>
+        <span class="skill-level skill-level--{{ .level | lower | replaceRE "[^a-z]" "-" }}">{{ .level }}</span>
+      </div>
+      {{- end }}
+    </div>
+
+    {{/* ---- Education ---- */}}
+    <h2>Education</h2>
+    <div class="portfolio-cards">
+      {{- range site.Data.education }}
+      <div class="portfolio-card">
+        <div class="portfolio-card__logo">
+          <img src="{{ .logo }}" alt="{{ .institution }}" loading="lazy" width="48" height="48" />
+        </div>
+        <div class="portfolio-card__body">
+          <h3 class="portfolio-card__title">{{ .degree }}</h3>
+          <p class="portfolio-card__subtitle">
+            {{- if .url }}<a href="{{ .url }}" target="_blank" rel="noopener noreferrer">{{ .institution }}</a>
+            {{- else }}{{ .institution }}{{ end }}
+          </p>
+          <p class="portfolio-card__period">{{ .period }}</p>
+        </div>
+      </div>
+      {{- end }}
+    </div>
+
+    {{/* ---- Certifications ---- */}}
+    <h2>Certifications</h2>
+    <div class="portfolio-cards">
+      {{- range site.Data.certifications }}
+      <div class="portfolio-card">
+        <div class="portfolio-card__logo">
+          <img src="{{ .logo }}" alt="{{ .title }}" loading="lazy" width="48" height="48" />
+        </div>
+        <div class="portfolio-card__body">
+          <h3 class="portfolio-card__title">
+            {{- if .url }}<a href="{{ .url }}" target="_blank" rel="noopener noreferrer">{{ .title }}</a>
+            {{- else }}{{ .title }}{{ end }}
+          </h3>
+          <p class="portfolio-card__subtitle">{{ .issuer }}</p>
+        </div>
+      </div>
+      {{- end }}
+    </div>
+
+  </div>{{/* end post-content */}}
+</article>
+{{- end }}

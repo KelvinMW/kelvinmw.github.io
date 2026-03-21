@@ -1,0 +1,383 @@
+/* ============================================================
+   Portfolio Custom Styles — Kelvin Maina Wangari
+   Uses PaperMod CSS variables for theme consistency
+   ============================================================ */
+
+/* ---------- Shared card grid ---------- */
+.portfolio-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.25rem;
+  margin: 1.5rem 0 2.5rem;
+}
+
+.portfolio-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.25rem;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--entry);
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.portfolio-card:hover {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px);
+}
+
+.portfolio-card__logo {
+  flex-shrink: 0;
+  width: 52px;
+  height: 52px;
+  border-radius: 10px;
+  overflow: hidden;
+  background: var(--code-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.portfolio-card__logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 4px;
+}
+
+.portfolio-card__body {
+  flex: 1;
+  min-width: 0;
+}
+
+.portfolio-card__title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin: 0 0 0.25rem;
+  color: var(--primary);
+  line-height: 1.3;
+}
+
+.portfolio-card__title a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.portfolio-card__title a:hover {
+  text-decoration: underline;
+}
+
+.portfolio-card__subtitle {
+  font-size: 0.82rem;
+  color: var(--secondary);
+  margin: 0 0 0.2rem;
+}
+
+.portfolio-card__period {
+  font-size: 0.78rem;
+  color: var(--secondary);
+  margin: 0;
+  font-style: italic;
+}
+
+/* ---------- Skills ---------- */
+.portfolio-skills {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 0.75rem;
+  margin: 1.25rem 0 2.5rem;
+}
+
+.skill-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.65rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--entry);
+}
+
+.skill-title {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--primary);
+}
+
+.skill-level {
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.skill-level--expert {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+.skill-level--advanced {
+  background: #dbeafe;
+  color: #1e40af;
+}
+
+.skill-level--proficient {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+/* Dark mode badge adjustments */
+.dark .skill-level--expert {
+  background: #064e3b;
+  color: #6ee7b7;
+}
+
+.dark .skill-level--advanced {
+  background: #1e3a5f;
+  color: #93c5fd;
+}
+
+.dark .skill-level--proficient {
+  background: #78350f;
+  color: #fde68a;
+}
+
+/* ---------- Experience Timeline ---------- */
+.experience-timeline {
+  position: relative;
+  margin: 1.5rem 0;
+}
+
+.experience-timeline::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: var(--border);
+  border-radius: 2px;
+}
+
+.experience-item {
+  position: relative;
+  padding: 0 0 2.5rem 2rem;
+}
+
+.experience-item::before {
+  content: "";
+  position: absolute;
+  left: -5px;
+  top: 6px;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: var(--border);
+  border: 2px solid var(--theme);
+}
+
+.experience-item--current::before {
+  background: var(--primary);
+}
+
+.experience-item__header {
+  margin-bottom: 0.75rem;
+}
+
+.experience-item__title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin: 0 0 0.15rem;
+  color: var(--primary);
+}
+
+.experience-item__company {
+  font-size: 0.9rem;
+  color: var(--secondary);
+  margin: 0 0 0.25rem;
+}
+
+.experience-item__location {
+  font-style: italic;
+}
+
+.experience-item__period {
+  font-size: 0.8rem;
+  color: var(--secondary);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.experience-item__tasks {
+  padding-left: 1.25rem;
+  margin: 0.5rem 0 0;
+}
+
+.experience-item__tasks li {
+  font-size: 0.88rem;
+  line-height: 1.65;
+  margin-bottom: 0.4rem;
+  color: var(--primary);
+}
+
+/* ---------- Badge ---------- */
+.badge {
+  display: inline-block;
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.badge--active {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+.dark .badge--active {
+  background: #064e3b;
+  color: #6ee7b7;
+}
+
+/* ---------- Projects Grid ---------- */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin: 1.5rem 0;
+}
+
+.project-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: var(--entry);
+  overflow: hidden;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.project-card:hover {
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.1);
+  transform: translateY(-3px);
+}
+
+.project-card__logo {
+  width: 100%;
+  height: 80px;
+  background: var(--code-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+}
+
+.project-card__logo img {
+  max-height: 56px;
+  max-width: 140px;
+  object-fit: contain;
+}
+
+.project-card__body {
+  padding: 1.2rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-card__title {
+  font-size: 1rem;
+  font-weight: 700;
+  margin: 0 0 0.25rem;
+  color: var(--primary);
+}
+
+.project-card__title a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.project-card__title a:hover {
+  text-decoration: underline;
+}
+
+.project-card__client {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: 0 0 0.75rem;
+}
+
+.project-card__description {
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: var(--primary);
+  margin: 0 0 1rem;
+  flex: 1;
+}
+
+.project-card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 0.9rem;
+}
+
+.tag {
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 20px;
+  background: var(--code-bg);
+  color: var(--secondary);
+  text-transform: lowercase;
+}
+
+.project-card__link {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--primary);
+  text-decoration: none;
+  border: 1px solid var(--border);
+  padding: 6px 12px;
+  border-radius: 6px;
+  display: inline-block;
+  transition: background 0.15s ease;
+  align-self: flex-start;
+}
+
+.project-card__link:hover {
+  background: var(--code-bg);
+}
+
+/* ---------- Responsive tweaks ---------- */
+@media (max-width: 600px) {
+  .experience-timeline::before {
+    display: none;
+  }
+
+  .experience-item {
+    padding-left: 0;
+  }
+
+  .experience-item::before {
+    display: none;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .portfolio-cards {
+    grid-template-columns: 1fr;
+  }
+}

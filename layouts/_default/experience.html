@@ -1,0 +1,37 @@
+{{- define "main" }}
+<article class="post-single">
+  <header class="post-header">
+    <h1 class="post-title">{{ .Title }}</h1>
+    {{- if .Description }}
+    <div class="post-description">{{ .Description }}</div>
+    {{- end }}
+  </header>
+
+  <div class="post-content">
+    <div class="experience-timeline">
+      {{- range site.Data.experience }}
+      <div class="experience-item{{ if .current }} experience-item--current{{ end }}">
+        <div class="experience-item__header">
+          <div class="experience-item__meta">
+            <h2 class="experience-item__title">{{ .title }}</h2>
+            <p class="experience-item__company">
+              {{ .company }}
+              <span class="experience-item__location">— {{ .location }}</span>
+            </p>
+            <span class="experience-item__period">
+              {{- if .current }}<span class="badge badge--active">Current</span> {{ end -}}
+              {{ .period }}
+            </span>
+          </div>
+        </div>
+        <ul class="experience-item__tasks">
+          {{- range .tasks }}
+          <li>{{ . | safeHTML }}</li>
+          {{- end }}
+        </ul>
+      </div>
+      {{- end }}
+    </div>
+  </div>
+</article>
+{{- end }}

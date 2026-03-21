@@ -1,0 +1,47 @@
+- title: "Cambridge Computer Science / ICT Instructor"
+  company: "Independent School"
+  location: "Victoria, Seychelles"
+  period: "July 2025 – Present"
+  current: true
+  tasks:
+    - "Instructing Cambridge Computer Science and ICT curriculum to students."
+    - "Developing and implementing comprehensive lesson plans aligned with Cambridge standards."
+    - "Assessing student progress and providing constructive feedback on assignments and projects."
+    - "Integrating modern technology and teaching methodologies to enhance learning outcomes."
+    - "Collaborating with faculty to ensure curriculum alignment and student success."
+
+- title: "Project-Based IT Consultant & Software Developer"
+  company: "Kwality Consulting Solutions"
+  location: "Hargeisa, Somaliland"
+  period: "February 2020 – Present (Project-based)"
+  current: true
+  tasks:
+    - "Work on a project basis, providing IT consulting and software development services as needed."
+    - "Lead the design and implementation of client projects, collaborating with the development team to meet all specifications."
+    - "Manage deployment and configuration of applications on various cloud platforms including AWS, Azure, and GCP, handling all DevOps responsibilities."
+    - "Engineer and implement new software features to drive user engagement across existing services."
+    - "Identify and resolve software defects and enhance application stability by creating comprehensive unit tests."
+    - "Direct project lifecycle by defining scope and objectives, writing technical proposals to secure new business, and negotiating client contracts."
+    - "Conduct in-depth business analysis and translate complex data into simplified, actionable insights for strategic decision-making."
+
+- title: "ICT & Computer Science Teacher"
+  company: "ELM International Schools"
+  location: "Hargeisa, Somaliland"
+  period: "September 2018 – June 2025"
+  current: false
+  tasks:
+    - "Headed the ICT department, overseeing the integration of technology into the curriculum across all departments."
+    - "Pioneered and implemented a new Learning Management System (LMS) for the institution — covering system design, training, and ongoing faculty support."
+    - "Facilitated the school's transition to remote learning during the COVID-19 pandemic by integrating live video sessions for all classes."
+    - "Designed, developed, and implemented a comprehensive school management system utilized across all five branches of the school."
+    - "Deployed a new server to handle the majority of the school's online services."
+
+- title: "Mathematics & IT Teacher"
+  company: "Mukuru Promotion Center"
+  location: "Nairobi, Kenya"
+  period: "2015 – 2018"
+  current: false
+  tasks:
+    - "Served as Head of the Mathematics and Science department."
+    - "Developed and delivered engaging lesson plans and instructional materials for both Mathematics and ICT."
+    - "Assessed and tracked student progress through a variety of assessments."

@@ -1,0 +1,41 @@
+- title: "Data Visualization Dashboard"
+  client: "Concern Worldwide"
+  description: "Built an interactive data visualization dashboard to track and present humanitarian aid metrics, enabling data-driven decision-making for field operations."
+  logo: "/img/notion/white/concern.png"
+  url: ""
+  tags: ["data", "visualization", "dashboard"]
+
+- title: "OXSOM Mobile App"
+  client: "Oxfam International"
+  description: "Developed a mobile e-learning application for Oxfam to deliver training content and resources to staff and beneficiaries across East Africa."
+  logo: "/img/notion/white/oxfam.png"
+  url: "https://play.google.com/store/apps/details?id=com.oxfamelearning.oxfamelearning"
+  tags: ["mobile", "e-learning", "Android"]
+
+- title: "School Management System"
+  client: "ELM International School"
+  description: "Designed and implemented a full-featured school management system deployed across five school branches, covering student records, timetables, attendance, and reporting."
+  logo: "/img/notion/white/elm.png"
+  url: ""
+  tags: ["web app", "education", "management system"]
+
+- title: "Data Center Technical Support"
+  client: "Somaliland Government"
+  description: "Provided technical support for the Somaliland government data center, ensuring high availability and reliability of critical national digital infrastructure."
+  logo: "/img/notion/white/somalilandgov.png"
+  url: ""
+  tags: ["infrastructure", "data center", "government"]
+
+- title: "Operations Portal"
+  client: "Salaam Security & Logistics"
+  description: "Developed an internal operations portal to streamline logistics tracking, personnel management, and reporting workflows for a security and logistics company."
+  logo: "/img/notion/white/salaam.png"
+  url: ""
+  tags: ["web app", "logistics", "operations"]
+
+- title: "Data Analysis & Graphing"
+  client: "Save the Children International"
+  description: "Performed in-depth data analysis and produced visual reports on program impact data to support evidence-based reporting for international donors."
+  logo: "/img/notion/white/savethechildre.png"
+  url: ""
+  tags: ["data analysis", "reporting", "NGO"]

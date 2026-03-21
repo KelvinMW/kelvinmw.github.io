@@ -1,30 +1,39 @@
-name: Deploy Astra Site
+name: Deploy Hugo Site
 
 on:
   push:
     branches:
-      - main  # or 'master'
+      - main
+  workflow_dispatch:
+
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
-
-      - name: Install Node.js
-        uses: actions/setup-node@v3
+        uses: actions/checkout@v4
         with:
-          node-version: 18
+          submodules: recursive  # Fetch PaperMod submodule
+          fetch-depth: 0         # Fetch full history for .GitInfo and .Lastmod
 
-      - name: Install dependencies
-        run: npm install
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v3
+        with:
+          hugo-version: "latest"
+          extended: true
 
       - name: Build
-        run: npm run build
+        run: hugo --minify
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           personal_token: ${{ secrets.GH_PAT }}
-          publish_dir: ./dist
+          publish_dir: ./public
+          cname: kelvinmaina.com

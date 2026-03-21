@@ -1,0 +1,38 @@
+{{- define "main" }}
+<article class="post-single">
+  <header class="post-header">
+    <h1 class="post-title">{{ .Title }}</h1>
+    {{- if .Description }}
+    <div class="post-description">{{ .Description }}</div>
+    {{- end }}
+  </header>
+
+  <div class="post-content">
+    <div class="projects-grid">
+      {{- range site.Data.projects }}
+      <div class="project-card">
+        <div class="project-card__logo">
+          <img src="{{ .logo }}" alt="{{ .client }}" loading="lazy" width="56" height="56" />
+        </div>
+        <div class="project-card__body">
+          <h2 class="project-card__title">
+            {{- if .url }}<a href="{{ .url }}" target="_blank" rel="noopener noreferrer">{{ .title }}</a>
+            {{- else }}{{ .title }}{{ end }}
+          </h2>
+          <p class="project-card__client">{{ .client }}</p>
+          <p class="project-card__description">{{ .description }}</p>
+          <div class="project-card__tags">
+            {{- range .tags }}
+            <span class="tag">{{ . }}</span>
+            {{- end }}
+          </div>
+          {{- if .url }}
+          <a href="{{ .url }}" target="_blank" rel="noopener noreferrer" class="project-card__link">View Project &rarr;</a>
+          {{- end }}
+        </div>
+      </div>
+      {{- end }}
+    </div>
+  </div>
+</article>
+{{- end }}

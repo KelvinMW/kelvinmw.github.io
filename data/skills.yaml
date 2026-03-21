@@ -1,0 +1,35 @@
+- title: "Operating Systems"
+  level: "Expert"
+  category: "infrastructure"
+
+- title: "Data Analysis & Visualization"
+  level: "Expert"
+  category: "data"
+
+- title: "Technical Writing"
+  level: "Expert"
+  category: "communication"
+
+- title: "Software Development"
+  level: "Advanced"
+  category: "development"
+
+- title: "Cloud Platforms (AWS, Azure, GCP, DigitalOcean)"
+  level: "Advanced"
+  category: "infrastructure"
+
+- title: "Databases"
+  level: "Advanced"
+  category: "development"
+
+- title: "Data Structures & Algorithms"
+  level: "Advanced"
+  category: "development"
+
+- title: "Networking"
+  level: "Advanced"
+  category: "infrastructure"
+
+- title: "Spreadsheet Software / Microsoft Excel"
+  level: "Proficient"
+  category: "data"
