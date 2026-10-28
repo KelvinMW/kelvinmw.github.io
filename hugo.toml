@@ -73,6 +73,9 @@ buildExpired = false
     [[params.profileMode.buttons]]
       name = "About"
       url = "/about"
+    [[params.profileMode.buttons]]
+      name = "float64 ↗"
+      url = "https://float-64.com/"
 
   [[params.socialIcons]]
     name = "github"
@@ -143,6 +146,11 @@ buildExpired = false
     name = "About"
     url = "/about/"
     weight = 40
+  [[menu.main]]
+    identifier = "float64"
+    name = "float64 ↗"
+    url = "https://float-64.com/"
+    weight = 45
   [[menu.main]]
     identifier = "search"
     name = "Search"
